@@ -100,8 +100,8 @@ async function isValidRoute(routeSegment: string) {
 // This is temporal until all segements are migrated to app router
 // Any segment migrated to app router needs to be included here
 const isAnAppRoute = (routeSegment: string) => {
-  const appRoutes = ['meet-the-team'];
-  return appRoutes.includes(routeSegment);
+  const appRoutes = ['meet-the-team', 'welcome'];
+  return appRoutes.some((route) => routeSegment.startsWith(route));
 };
 
 const setCookie = (cookies: ResponseCookies, locale: Locale) => {
